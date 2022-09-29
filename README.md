@@ -1,1 +1,1 @@
-# odoo-andys-hr
+# odoo-andys-learning
