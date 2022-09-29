@@ -15,7 +15,7 @@
     'version': '15.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'muk_web_theme', 'hr'],
+    'depends': ['base', 'web', 'muk_web_theme'],
 
     # always loaded
     'data': [
