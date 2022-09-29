@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Restaurant HR",
+    'name': "Restaurant E-Learning",
 
-    'summary': """Restaurant HR""",
+    'summary': """Restaurant E-Learning""",
 
     'description': """
-        Restaurant HR
+        Restaurant E-Learning
     """,
 
     'author': "Pantilei Ianulov",
@@ -15,26 +15,13 @@
     'version': '15.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'muk_web_theme', 'hr', 'hr_skills', 'hr_organizational_chart', 'survey', 'hr_recruitment'],
+    'depends': ['base', 'web', 'muk_web_theme', 'hr'],
 
     # always loaded
     'data': [
-        'security/restaurant_hr_security.xml',
-        'security/ir.model.access.csv',
-
-        'views/hr_employee.xml',
-        'views/hr_department.xml',
-        'views/survey_survey.xml',
-        'views/hr_applicant.xml',
-        'views/hr_job.xml',
+        # 'security/ir.model.access.csv',
 
         'views/menu_items.xml',
-
-        'wizards/employee_survey_select_wizard.xml',
-        'wizards/applicant_survey_select_wizard.xml',
-
-        'data/data.xml',
-
     ],
     # only loaded in demonstration mode
     'demo': [],
