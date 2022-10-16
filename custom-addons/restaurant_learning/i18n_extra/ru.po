@@ -4750,3 +4750,19 @@ msgstr "Срок действия опроса истек"
 #: model_terms:ir.ui.view,arch_db:survey.survey_void_content
 msgid "survey is empty"
 msgstr "Опрос пуст"
+
+#. module: website_slides_survey
+#: model_terms:ir.ui.view,arch_db:website_slides_survey.slide_channel_view_form
+msgid "Add Certification"
+msgstr "Добавить Сертификацию"
+
+#. module: website_slides_survey
+#. openerp-web
+#: code:addons/website_slides_survey/static/src/js/slides_upload.js:0
+#: code:addons/website_slides_survey/static/src/js/slides_upload.js:0
+#: code:addons/website_slides_survey/static/src/xml/website_slide_upload.xml:0
+#: model:ir.model.fields,field_description:website_slides_survey.field_slide_slide__survey_id
+#: model:ir.model.fields.selection,name:website_slides_survey.selection__slide_slide__slide_type__certification
+#, python-format
+msgid "Certification"
+msgstr "Сертификация"
