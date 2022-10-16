@@ -2258,7 +2258,7 @@ msgstr "SEO имя"
 #. module: website_slides
 #: model_terms:ir.ui.view,arch_db:website_slides.slide_content_detailed
 msgid "Set Done"
-msgstr "Установить"
+msgstr "Готово"
 
 #. module: website_slides
 #: model_terms:ir.ui.view,arch_db:website_slides.course_main
