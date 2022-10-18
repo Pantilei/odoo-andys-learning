@@ -3994,7 +3994,7 @@ msgstr "Пока нет вопроса, вернись позже."
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__scoring_type__no_scoring
 msgid "No scoring"
-msgstr "Нет забивания"
+msgstr "Без Оценки"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__attempts_limit
@@ -4056,7 +4056,7 @@ msgstr "Другое (см. Комментарии)"
 #. openerp-web
 #: code:addons/survey/static/src/js/survey_result.js:0
 msgid "Overall Performance"
-msgstr "Общая производительность"
+msgstr "Общая эффективность"
 
 #. module: survey
 #. openerp-web
@@ -4766,3 +4766,18 @@ msgstr "Добавить Сертификацию"
 #, python-format
 msgid "Certification"
 msgstr "Сертификация"
+
+#. module: website_slides_survey
+#: model_terms:ir.ui.view,arch_db:website_slides_survey.survey_fill_form_done_inherit_website_slides
+msgid "Go back to course"
+msgstr "Назад к курсу"
+
+
+#. module: website_slides_survey
+#: model_terms:ir.ui.view,arch_db:website_slides_survey.survey_fill_form_done_inherit_website_slides
+msgid ""
+"<i class=\"fa fa-share-alt\" aria-label=\"Share certification\" title=\"Share certification\"/>\n"
+"                        Share your certification"
+msgstr ""
+"<i class=\"fa fa-share-alt\" aria-label=\"Share certification\" title=\"Поделиться Сертификатом\"/>\n"
+"                        Поделиться Сертификатом"
