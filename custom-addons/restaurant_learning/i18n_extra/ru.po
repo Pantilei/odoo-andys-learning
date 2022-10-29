@@ -3134,7 +3134,7 @@ msgid ""
 "<span attrs=\"{'invisible': [('is_time_limited', '=', False)]}\"> "
 "seconds</span>"
 msgstr ""
-"<span attrs = \"{'invisible': [('is_time_limited', '=', false)]}\"> Секунды "
+"<span attrs = \"{'invisible': [('is_time_limited', '=', False)]}\"> Секунды "
 "</span>"
 
 #. module: survey
