@@ -4786,3 +4786,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_slides.courses_all
 msgid "All Courses"
 msgstr "Все Курсы"
+
+#. module: website_slides_survey
+#: model_terms:ir.ui.view,arch_db:website_slides_survey.course_main
+msgid "Begin your <b>certification</b> today!"
+msgstr "Начните вашу <b>сертификацию</b> сегодня!"
+
+#. module: website_slides_survey
+#: model_terms:ir.ui.view,arch_db:website_slides_survey.course_main
+msgid "<span>Start Now</span><i class=\"fa fa-chevron-right ml-2 align-middle\"/>"
+msgstr "<span>Начните Сейчас</span><i class=\"fa fa-chevron-right ml-2 align-middle\"/>"
