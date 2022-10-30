@@ -4781,3 +4781,8 @@ msgid ""
 msgstr ""
 "<i class=\"fa fa-share-alt\" aria-label=\"Share certification\" title=\"Поделиться Сертификатом\"/>\n"
 "                        Поделиться Сертификатом"
+
+#. module: website_slides
+#: model_terms:ir.ui.view,arch_db:website_slides.courses_all
+msgid "All Courses"
+msgstr "Все Курсы"

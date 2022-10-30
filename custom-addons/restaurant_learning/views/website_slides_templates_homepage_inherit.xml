@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="courses_home" name="Courses Homepage" inherit_id="website_slides.courses_home">
+        <xpath expr="//div[@t-if='not channels_popular']" position="replace"></xpath>
+
+        <xpath expr="//a[@data-target='#o_wslides_home_aside_content']" position="replace"></xpath>
+        <xpath expr="//div[@id='o_wslides_home_aside_content']" position="replace"></xpath>
+
+        <xpath expr="//div[hasclass('container')]" position="inside">
+            <t t-set="channels_popular" t-value="False" />
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace"></xpath>
+
+    </template>
+
+    <template id="courses_all" name="Courses Homepage" inherit_id="website_slides.courses_all">
+        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace"></xpath>
+    </template>
+
+
+</odoo>

@@ -21,6 +21,8 @@
     'data': [
         # 'security/ir.model.access.csv',
 
+        'views/website_slides_templates_homepage_inherit.xml',
+
         'views/menu_items.xml',
     ],
     # only loaded in demonstration mode
