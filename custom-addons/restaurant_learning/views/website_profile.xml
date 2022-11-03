@@ -6,7 +6,7 @@
         <xpath expr="//div[hasclass('container')]" position="replace">
             <div class="container">
                 <div class="row">
-    
+
                     <!-- ========== SIDEBAR ========== -->
                     <div class="col-12 col-md-4 col-lg-3 mt-3 mt-md-0">
                         <div class="o_wprofile_sidebar bg-white px-3 py-2 py-md-3 mb-3 mb-md-5">
@@ -14,28 +14,54 @@
                                 <table class="table table-sm w-100" id="o_wprofile_sidebar_table">
                                     <tbody>
                                         <tr>
-                                            <th><small class="font-weight-bold">Joined</small></th>
-                                            <td><span t-field="user.create_date" t-options='{"format": "d MMM Y"}'/></td>
+                                            <th>
+                                                <small class="font-weight-bold">Joined</small>
+                                            </th>
+                                            <td>
+                                                <span t-field="user.create_date" t-options='{"format": "d MMM Y"}' />
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-    
-                   <!-- ========== PROFILE CONTENT ========== -->
-                <div class="col-12 col-md-8 col-lg-9">
-                    <ul class="nav nav-tabs o_wprofile_nav_tabs flex-nowrap" role="tablist" id="profile_extra_info_tablist">
-                        <li class="nav-item">
-                            <a role="tab" aria-controls="about" href="#profile_tab_content_about" class="nav-link active" data-toggle="tab">About</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content py-4 o_wprofile_tabs_content mb-4" id="profile_extra_info_tabcontent">
-                        <div role="tabpanel" class="tab-pane active" id="profile_tab_content_about">
-                            <div id="profile_about_badge" class="mb32"></div>
+
+                    <!-- ========== PROFILE CONTENT ========== -->
+                    <div class="col-12 col-md-8 col-lg-9">
+                        <ul class="nav nav-tabs o_wprofile_nav_tabs flex-nowrap" role="tablist" id="profile_extra_info_tablist">
+                            <li class="nav-item">
+                                <a role="tab" aria-controls="about" href="#profile_tab_content_about" class="nav-link active" data-toggle="tab">About</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content py-4 o_wprofile_tabs_content mb-4" id="profile_extra_info_tabcontent">
+                            <div role="tabpanel" class="tab-pane active" id="profile_tab_content_about">
+                                <t t-if="channel">
+                                    <div class="mb32">
+                                        <h5 class="border-bottom pb-1">Completed Courses</h5>
+                                        <t t-if="courses_completed" t-call="website_slides.display_course">
+                                            <t t-set="courses" t-value="courses_completed"></t>
+                                        </t>
+                                        <div t-else="" class="text-muted d-inline-block">No completed courses yet!</div>
+                                        <div class="text-right d-inline-block pull-right">
+                                            <a href="/slides/all" class="btn btn-link btn-sm"><i class="fa fa-arrow-right mr-1"/>All Courses</a>
+                                        </div>
+                                    </div>
+                                    <div class="mb32">
+                                        <h5 class="border-bottom pb-1">Followed Courses</h5>
+                                        <t t-if="courses_ongoing" t-call="website_slides.display_course">
+                                            <t t-set="courses" t-value="courses_ongoing"></t>
+                                        </t>
+                                        <p t-else="" class="text-muted">No followed courses yet!</p>
+                                    </div>
+                                    <div class="mb32">
+                                        <h5 class="border-bottom pb-1">Certifications</h5>
+                                        <t t-call="website_slides_survey.display_certificate"/>
+                                    </div>
+                                </t>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </xpath>
