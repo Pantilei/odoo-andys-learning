@@ -22,6 +22,7 @@
         # 'security/ir.model.access.csv',
 
         'views/website_slides_templates_homepage_inherit.xml',
+        'views/website_profile.xml',
 
         'views/menu_items.xml',
     ],
