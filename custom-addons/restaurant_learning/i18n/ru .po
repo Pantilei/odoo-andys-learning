@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 13:02+0000\n"
-"PO-Revision-Date: 2022-11-12 13:02+0000\n"
+"POT-Creation-Date: 2022-11-12 15:20+0000\n"
+"PO-Revision-Date: 2022-11-12 15:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.res_users_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.inherit_res_users
 msgid "0012345 or email@yourcompany.com"
 msgstr "0012345 или email@yourcompany.com"
 
@@ -36,9 +36,17 @@ msgid "About"
 msgstr "О Вас"
 
 #. module: restaurant_learning
+#: code:addons/restaurant_learning/models/slide_channel.py:0
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+#, python-format
+msgid "Assign the Course"
+msgstr "Назнвчить Курс"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
 msgid "Certifications"
-msgstr "Сертификации"
+msgstr "Сертификация"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -61,7 +69,7 @@ msgid "ID / Email"
 msgstr "ID / Email"
 
 #. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.res_users_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.inherit_res_users
 msgid "ID / Email Address"
 msgstr "ID / Email Адрес"
 
