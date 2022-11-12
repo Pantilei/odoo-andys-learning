@@ -23,6 +23,8 @@
 
         'views/website_slides_templates_homepage_inherit.xml',
         'views/website_profile.xml',
+        'views/webclient_templates.xml',
+        'views/res_users.xml',
 
         'views/menu_items.xml',
     ],

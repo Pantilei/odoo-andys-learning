@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* restaurant_learning
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-12 13:02+0000\n"
+"PO-Revision-Date: 2022-11-12 13:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.res_users_form
+msgid "0012345 or email@yourcompany.com"
+msgstr "0012345 или email@yourcompany.com"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "<i class=\"fa fa-arrow-right mr-1\"/>All Courses"
+msgstr "<i class=\"fa fa-arrow-right mr-1\"/>Все Курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "<small class=\"font-weight-bold\">Joined</small>"
+msgstr "<small class=\"font-weight-bold\">Присоединился</small>"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "About"
+msgstr "О Вас"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "Certifications"
+msgstr "Сертификации"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "Completed Courses"
+msgstr "Оконченные Курсы"
+
+#. module: restaurant_learning
+#: model:ir.model,name:restaurant_learning.model_slide_channel
+msgid "Course"
+msgstr "Обучающий курс"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "Followed Courses"
+msgstr "Отслеживаемые Курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.webl_ogin_inherit
+msgid "ID / Email"
+msgstr "ID / Email"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.res_users_form
+msgid "ID / Email Address"
+msgstr "ID / Email Адрес"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "No completed courses yet!"
+msgstr "Ещё не законченные курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
+msgid "No followed courses yet!"
+msgstr "Нет отслеживаемых курсов"

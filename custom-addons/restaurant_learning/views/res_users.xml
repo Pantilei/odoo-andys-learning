@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherit_res_users" model="ir.ui.view">
+        <field name="name">res.users.view.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='login']" position="replace">
+                <label for="login" string="ID / Email Address" />
+            </xpath>
+
+            <xpath expr="//field[@name='login']" position="replace">
+                <h2>
+                    <field name="login" placeholder="0012345 or email@yourcompany.com" />
+                </h2>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="auth_signup_inherit_res_users" model="ir.ui.view">
+        <field name="name">auth_signup.res.users.view.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="auth_signup.res_users_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_reset_password']" position="replace"></xpath>
+            <xpath expr="//button[@name='action_reset_password']" position="replace"></xpath>
+        </field>
+    </record>
+
+</odoo>
