@@ -8,8 +8,8 @@
             <form string="Assign the Course">
                 <sheet>
                     <group>
-                        <field name="channel_id" readonly="1" />
-                        <field name="partner_id" options="{'no_create': 1}" />
+                        <field name="channel_id" readonly="1" string="Course" />
+                        <field name="partner_id" options="{'no_create': 1}" string="Participant" />
                     </group>
                 </sheet>
             </form>
