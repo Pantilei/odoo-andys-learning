@@ -25,6 +25,8 @@
         'views/website_profile.xml',
         'views/webclient_templates.xml',
         'views/res_users.xml',
+        'views/slide_channel.xml',
+        'views/slide_channel_partner.xml',
 
         'views/menu_items.xml',
     ],

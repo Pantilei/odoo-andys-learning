@@ -43,3 +43,15 @@ class SlideChannel(models.Model):
             "user_id": user_id.id,
             "partner_id": partner_id.id,
         }
+
+    def assign_course(self):
+        return {
+            "name": _("Assign the Course"),
+            "type": "ir.actions.act_window",
+            "res_model": "slide.channel.partner",
+            "views": [[self.env.ref('restaurant_learning.slide_channel_partner_view_form').id, "form"]],
+            "context": {
+                "default_channel_id": self.id,
+            },
+            "target": "current",
+        }
