@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="website_slides.rule_slide_channel_officer_cw" model="ir.rule">
+        <field name="perm_read" eval="True" />
+        <field name="perm_unlink" eval="True" />
+    </record>
+
+    <record id="website_slides.rule_slide_channel_officer_r" model="ir.rule">
+        <field name="active" eval="False" />
+    </record>
+</odoo>

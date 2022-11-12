@@ -15,11 +15,12 @@
     'version': '15.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'muk_web_theme', 'website_slides'],
+    'depends': ['base', 'web', 'muk_web_theme', 'website_slides', 'website_slides_survey'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        # 'security/slides_security.xml',
 
         'views/website_slides_templates_homepage_inherit.xml',
         'views/website_profile.xml',
@@ -27,6 +28,8 @@
         'views/res_users.xml',
         'views/slide_channel.xml',
         'views/slide_channel_partner.xml',
+        'views/survey_survey.xml',
+        'views/slide_slide.xml',
 
         'views/menu_items.xml',
     ],

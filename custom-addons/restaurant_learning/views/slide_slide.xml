@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_slides.slide_slide_action" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_create_uid': 1
+        }</field>
+        <!-- <field name="domain">[('create_uid', '=', uid)]</field> -->
+    </record>
+
+    <record id="slide_slide_view_search" model="ir.ui.view">
+        <field name="name">slide.slide.search</field>
+        <field name="model">slide.slide</field>
+        <field name="inherit_id" ref="website_slides.view_slide_slide_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter string="Created by me" name="create_uid" domain="[('create_uid', '=', uid)]" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_slide_slide_form_view" model="ir.ui.view">
+        <field name="name">slide.slide.view.form.inherit</field>
+        <field name="model">slide.slide</field>
+        <field name="inherit_id" ref="website_slides_survey.slide_slide_view_form" />
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='survey_id']" position="replace">
+                <field name="survey_id" attrs="{'invisible': [('slide_type', '!=', 'certification')], 'required': [('slide_type', '=', 'certification')]}" domain="[('certification', '=', True), ('create_uid', '=', uid)]" context="{'default_certification': True, 'default_scoring_type': 'scoring_without_answers'}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

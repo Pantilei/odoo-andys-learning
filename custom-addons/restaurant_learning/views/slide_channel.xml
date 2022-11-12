@@ -15,4 +15,24 @@
     </record>
 
 
+    <record id="website_slides.slide_channel_action_overview" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_create_uid': 1
+        }</field>
+        <!-- <field name="domain">[('create_uid', '=', uid)]</field> -->
+    </record>
+
+    <record id="slide_channel_view_search" model="ir.ui.view">
+        <field name="name">slide.channel.search</field>
+        <field name="model">slide.channel</field>
+        <field name="inherit_id" ref="website_slides.slide_channel_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter string="Created by me" name="create_uid" domain="[('create_uid', '=', uid)]" />
+            </xpath>
+        </field>
+    </record>
+
+
 </odoo>

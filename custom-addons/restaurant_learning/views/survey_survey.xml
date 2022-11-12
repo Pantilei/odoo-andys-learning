@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_slides_survey.survey_survey_action_slides" model="ir.actions.act_window">
+        <field name="context">{
+            'default_certification': True, 
+            'default_scoring_type': 'scoring_with_answers',
+            'search_default_create_uid': 1
+        }</field>
+        <!-- <field name="domain">[('create_uid', '=', uid)]</field> -->
+    </record>
+
+    <record id="survey_survey_view_search" model="ir.ui.view">
+        <field name="name">survey.survey.search</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter string="Created by me" name="create_uid" domain="[('create_uid', '=', uid)]" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
