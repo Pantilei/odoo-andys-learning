@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 15:26+0000\n"
-"PO-Revision-Date: 2022-11-12 15:26+0000\n"
+"POT-Creation-Date: 2022-11-13 18:12+0000\n"
+"PO-Revision-Date: 2022-11-13 18:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,13 @@ msgstr "Оконченные Курсы"
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
 msgid "Course"
 msgstr "Обучающий курс"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.survey_survey_view_search
+msgid "Created by me"
+msgstr "Созданные Мною"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
