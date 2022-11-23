@@ -7,7 +7,15 @@
         <field name="perm_unlink" eval="True" />
     </record>
 
-    <record id="website_slides.rule_slide_channel_officer_r" model="ir.rule">
+    <!-- <record id="website_slides.rule_slide_channel_officer_r" model="ir.rule">
         <field name="active" eval="False" />
+    </record> -->
+
+    <record id="website_slides.access_slide_channel_officer" model="ir.model.access">
+        <field name="perm_unlink" eval="True" />
+    </record>
+
+    <record id="website_slides.access_slide_slide_officer" model="ir.model.access">
+        <field name="perm_unlink" eval="True" />
     </record>
 </odoo>

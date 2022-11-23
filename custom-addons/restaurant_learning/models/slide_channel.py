@@ -4,6 +4,20 @@ from odoo import api, models, fields, _
 class SlideChannel(models.Model):
     _inherit = "slide.channel"
 
+    enroll = fields.Selection([
+        ('public', 'Public'), ('invite', 'On Invitation')],
+        default='invite', string='Enroll Policy', required=True,
+        help='Condition to enroll: everyone, on invite, on payment (sale bridge).')
+
+    visibility = fields.Selection([
+        ('public', 'Public'), ('members', 'Members Only')],
+        default='members', string='Visibility', required=True,
+        help='Applied directly as ACLs. Allow to hide channels and their content for non members.')
+
+    def publish_course(self):
+        for record in self:
+            record.is_published = True
+
     @api.model
     def create_assign_user_to_course(self, username, login, password, slide_channel_id):
         Users = self.env["res.users"]

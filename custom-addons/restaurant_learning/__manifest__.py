@@ -20,7 +20,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        # 'security/slides_security.xml',
+        'security/slides_security.xml',
 
         'views/website_slides_templates_homepage_inherit.xml',
         'views/website_profile.xml',
