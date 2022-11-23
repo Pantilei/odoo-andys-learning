@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-13 18:12+0000\n"
-"PO-Revision-Date: 2022-11-13 18:12+0000\n"
+"POT-Creation-Date: 2022-11-23 20:02+0000\n"
+"PO-Revision-Date: 2022-11-23 20:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,15 @@ msgid "About"
 msgstr "О Вас"
 
 #. module: restaurant_learning
+#: model:ir.model.fields,help:restaurant_learning.field_slide_channel__visibility
+msgid ""
+"Applied directly as ACLs. Allow to hide channels and their content for non "
+"members."
+msgstr ""
+"Применяется непосредственно как ACLS.Разрешить скрывать каналы и их "
+"содержание для не участников."
+
+#. module: restaurant_learning
 #: code:addons/restaurant_learning/models/slide_channel.py:0
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
@@ -54,6 +63,12 @@ msgid "Completed Courses"
 msgstr "Оконченные Курсы"
 
 #. module: restaurant_learning
+#: model:ir.model.fields,help:restaurant_learning.field_slide_channel__enroll
+msgid "Condition to enroll: everyone, on invite, on payment (sale bridge)."
+msgstr ""
+"Условие для регистрации: все, по приглашению, по оплате (мост продажи)."
+
+#. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_channel
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
 msgid "Course"
@@ -67,6 +82,11 @@ msgid "Created by me"
 msgstr "Созданные Мною"
 
 #. module: restaurant_learning
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel__enroll
+msgid "Enroll Policy"
+msgstr "Зарегистрируйте политику"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
 msgid "Followed Courses"
 msgstr "Отслеживаемые Курсы"
@@ -74,12 +94,17 @@ msgstr "Отслеживаемые Курсы"
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.webl_ogin_inherit
 msgid "ID / Email"
-msgstr "ID / Email"
+msgstr ""
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.inherit_res_users
 msgid "ID / Email Address"
 msgstr "ID / Email Адрес"
+
+#. module: restaurant_learning
+#: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__visibility__members
+msgid "Members Only"
+msgstr "Только для членов"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -92,6 +117,37 @@ msgid "No followed courses yet!"
 msgstr "Нет отслеживаемых курсов"
 
 #. module: restaurant_learning
+#: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__enroll__invite
+msgid "On Invitation"
+msgstr "По приглашению"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
 msgid "Participant"
 msgstr "Участник"
+
+#. module: restaurant_learning
+#: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__enroll__public
+#: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__visibility__public
+msgid "Public"
+msgstr "Публичный"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+msgid "Publish the Course"
+msgstr "Опубликовать Курс"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+msgid "Published"
+msgstr "Опубликовано"
+
+#. module: restaurant_learning
+#: model:ir.model,name:restaurant_learning.model_slide_slide
+msgid "Slides"
+msgstr "Слайды"
+
+#. module: restaurant_learning
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel__visibility
+msgid "Visibility"
+msgstr "Видимость"
