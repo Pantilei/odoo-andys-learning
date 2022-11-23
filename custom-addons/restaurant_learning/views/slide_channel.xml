@@ -41,7 +41,7 @@
 
     <record id="website_slides.slide_channel_action_overview" model="ir.actions.act_window">
         <field name="context">{
-            'search_default_create_uid': 1
+            'search_default_user_id': 1
         }</field>
         <!-- <field name="domain">[('create_uid', '=', uid)]</field> -->
     </record>
@@ -53,7 +53,7 @@
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='inactive']" position="after">
                 <separator />
-                <filter string="Created by me" name="create_uid" domain="[('create_uid', '=', uid)]" />
+                <filter string="Created by me" name="user_id" domain="[('user_id', '=', uid)]" />
             </xpath>
         </field>
     </record>
