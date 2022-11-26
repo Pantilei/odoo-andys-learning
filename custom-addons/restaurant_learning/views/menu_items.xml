@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <menuitem id="res_partner_menu_config"
+        name="Contacts"
+        parent="website_slides.website_slides_menu_configuration"
+        action="action_contacts"
+        groups="base.group_no_one"
+        sequence="10" />
 
 </odoo>

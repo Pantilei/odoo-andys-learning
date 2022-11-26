@@ -14,6 +14,12 @@ class SlideChannel(models.Model):
         default='members', string='Visibility', required=True,
         help='Applied directly as ACLs. Allow to hide channels and their content for non members.')
 
+    scoring_type = fields.Selection([
+        ('no_scoring', 'No scoring'),
+        ('scoring_with_answers', 'Scoring with answers at the end'),
+        ('scoring_without_answers', 'Scoring without answers at the end')],
+        string="Scoring", required=True, default='scoring_without_answers')
+
     def publish_course(self):
         for record in self:
             record.is_published = True
