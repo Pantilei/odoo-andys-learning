@@ -31,6 +31,8 @@
         'views/survey_survey.xml',
         'views/slide_slide.xml',
         'views/contacts.xml',
+        'views/portal_templates.xml',
+        'views/website_slides_templates_course.xml',
 
         'views/menu_items.xml',
     ],
@@ -42,7 +44,9 @@
     'assets': {
         'web._assets_primary_variables': [],
         'web.assets_backend': [],
-        'web.assets_frontend': [],
+        'web.assets_frontend': [
+            'restaurant_learning/static/src/js/slides_course_slides.js',
+        ],
         'web.assets_tests': [],
         'web.qunit_suite_tests': [],
         'web.report_assets_common': [],

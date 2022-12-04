@@ -10,6 +10,7 @@
             <xpath expr="//button[@name='action_channel_invite']" position="replace">
                 <button string="Assign the Course" name="assign_course" type="object" class="oe_highlight" />
                 <button string="Publish the Course" name="publish_course" type="object" class="oe_highlight" attrs="{'invisible': [('is_published', '=', True)]}" />
+                <button string="Publish all Contents" name="publish_all_contents" type="object" class="oe_highlight"/>
             </xpath>
 
             <xpath expr="//field[@name='slide_ids']/tree/field[@name='is_published']" position="replace">
@@ -34,6 +35,9 @@
             <xpath expr="//field[@name='enroll_msg']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+
+
+            <xpath expr="//page[@name='karma_rules']" position="replace"></xpath>
 
         </field>
     </record>

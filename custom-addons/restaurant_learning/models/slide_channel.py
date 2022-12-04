@@ -24,6 +24,12 @@ class SlideChannel(models.Model):
         for record in self:
             record.is_published = True
 
+    def publish_all_contents(self):
+        for record in self:
+            record.slide_ids.write({
+                "is_published": True
+            })
+
     @api.model
     def create_assign_user_to_course(self, username, login, password, slide_channel_id):
         Users = self.env["res.users"]
