@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 17:25+0000\n"
-"PO-Revision-Date: 2022-11-26 17:25+0000\n"
+"POT-Creation-Date: 2022-12-04 18:58+0000\n"
+"PO-Revision-Date: 2022-12-04 18:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,8 +22,17 @@ msgstr "0012345 или email@yourcompany.com"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
-msgid "<i class=\"fa fa-arrow-right mr-1\"/>All Courses"
-msgstr "<i class=\"fa fa-arrow-right mr-1\"/>Все Курсы"
+msgid ""
+"<i class=\"fa fa-arrow-right mr-1\"/>\n"
+"                                                All Courses"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_header
+msgid ""
+"<i class=\"fa fa-pencil mr-2\"/>\n"
+"                Редактировать Профиль"
+msgstr ""
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -156,6 +165,11 @@ msgstr "Публичный"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+msgid "Publish all Contents"
+msgstr "Опубликовать весь Контент"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
 msgid "Publish the Course"
 msgstr "Опубликовать Курс"
 
@@ -181,6 +195,11 @@ msgstr "Оценки с ответами в конце"
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__survey_survey__scoring_type__scoring_without_answers
 msgid "Scoring without answers at the end"
 msgstr "Оценки без ответов в конце"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_sign_in
+msgid "Sign in"
+msgstr "Войти"
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_slide
