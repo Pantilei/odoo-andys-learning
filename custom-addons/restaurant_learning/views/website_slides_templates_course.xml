@@ -5,4 +5,11 @@
         <xpath expr="//div[@id='o_wslides_sidebar_collapse']/div" position="replace"></xpath>
     </template>
 
+
+    <template name="Certification Course Main" id="website_slides_survey.course_main" inherit_id="website_slides.course_main">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="t-attf-class" separator=" " add="#{'o_wss_certification_channel' if channel.nbr_certification > 0 else ''}"/>
+        </xpath>
+    </template>
+
 </odoo>

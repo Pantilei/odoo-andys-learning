@@ -33,6 +33,7 @@
         'views/contacts.xml',
         'views/portal_templates.xml',
         'views/website_slides_templates_course.xml',
+        'views/website_slides_templates_lesson.xml',
 
         'views/menu_items.xml',
     ],

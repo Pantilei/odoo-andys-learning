@@ -29,6 +29,12 @@
             <xpath expr="//field[@name='survey_id']" position="replace">
                 <field name="survey_id" attrs="{'invisible': [('slide_type', '!=', 'certification')], 'required': [('slide_type', '=', 'certification')]}" domain="[('certification', '=', True), ('create_uid', '=', uid)]" context="{'default_certification': True, 'default_scoring_type': 'scoring_without_answers'}" />
             </xpath>
+
+            <xpath expr="//field[@name='description']" position="replace">
+                <field name="description" 
+                    placeholder="e.g. In this video, we'll give you the keys on how Odoo can help you to grow your business. At the end, we'll propose you a quiz to test your knowledge."
+                    widget="html" options="{'codeview': true}"/>
+            </xpath>
         </field>
     </record>
 

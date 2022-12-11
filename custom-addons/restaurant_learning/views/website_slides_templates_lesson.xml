@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="slide_content_detailed" name="Slide: Detailed Content" inherit_id="website_slides.slide_content_detailed">
+        <xpath expr="//ul[hasclass('o_wslides_lesson_nav')]" position="replace">
+            <ul class="nav nav-tabs o_wslides_lesson_nav" role="tablist">
+                <li class="nav-item">
+                    <a href="#about" aria-controls="about" class="nav-link active" role="tab" data-toggle="tab">
+                        <i class="fa fa-home"></i>
+                        About
+                    </a>
+                </li>
+            </ul>
+        </xpath>
+    </template>
+
+</odoo>

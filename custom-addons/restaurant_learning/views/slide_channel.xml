@@ -39,6 +39,14 @@
 
             <xpath expr="//page[@name='karma_rules']" position="replace"></xpath>
 
+
+            <xpath expr="//field[@name='description']" position="replace">
+                <field name="description" colspan="4" 
+                    placeholder="Common tasks for a computer scientist is asking the right questions and answering questions. In this course, you'll study those topics with activities about mathematics, science and logic." 
+                    widget="html" options="{'codeview': true}"/>
+            </xpath>
+
+
         </field>
     </record>
 
