@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-04 18:58+0000\n"
-"PO-Revision-Date: 2022-12-04 18:58+0000\n"
+"POT-Creation-Date: 2022-12-11 08:12+0000\n"
+"PO-Revision-Date: 2022-12-11 08:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,17 @@ msgid ""
 "<i class=\"fa fa-arrow-right mr-1\"/>\n"
 "                                                All Courses"
 msgstr ""
+"<i class=\"fa fa-arrow-right mr-1\"/>\n"
+"                                                Все Курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
+msgid ""
+"<i class=\"fa fa-home\"/>\n"
+"                        About"
+msgstr ""
+"<i class=\"fa fa-home\"/>\n"
+"                        Описание"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_header
@@ -70,6 +81,17 @@ msgstr "Назначить Курс"
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
 msgid "Certifications"
 msgstr "Сертификация"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+msgid ""
+"Common tasks for a computer scientist is asking the right questions and "
+"answering questions. In this course, you'll study those topics with "
+"activities about mathematics, science and logic."
+msgstr ""
+"Общие задачи для компьютерного ученогинженера - задавать правильные вопросы и"
+"отвечать на них. В этом курсе вы будете изучать эти темы вместе с "
+"занятиями по математике, естественным наукам и логике".
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -212,6 +234,20 @@ msgid "Survey"
 msgstr "Опрос"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.course_card
+msgid "Unpublished"
+msgstr "Не Опубликовано"
+
+#. module: restaurant_learning
 #: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel__visibility
 msgid "Visibility"
 msgstr "Видимость"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_slide_form_view
+msgid ""
+"e.g. In this video, we'll give you the keys on how Odoo can help you to grow"
+" your business. At the end, we'll propose you a quiz to test your knowledge."
+msgstr ""
+"Например, в этом видео мы дадим вам ключивые пункты к тому, как система может помочь вам расти"
+"в вашем деле. В конце мы предложим вам тест, чтобы проверить ваши знания."
