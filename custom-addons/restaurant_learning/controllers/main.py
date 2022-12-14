@@ -2,6 +2,7 @@ from odoo.http import request, Controller, route
 from odoo.addons.website_slides.controllers.main import WebsiteSlides
 from odoo.addons.website.controllers.main import QueryURL
 from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.osv import expression
 
 
 class WebsiteSlidesInherit(WebsiteSlides):
@@ -37,8 +38,14 @@ class WebsiteSlidesInherit(WebsiteSlides):
     @route('/slides', type='http', auth="public", website=True, sitemap=True)
     def slides_channel_home(self, **post):
         """ Home page for eLearning platform. Is mainly a container page, does not allow search / filter. """
+
+        user_id = request.env['res.users'].sudo().browse(request.session.uid)
+        domain = [("partner_id", "=", user_id.partner_id.id)]
+        channels = request.env["slide.channel.partner"].sudo().search(
+            domain).mapped("channel_id")
+
         domain = request.website.website_domain()
-        channels_all = request.env['slide.channel'].search(domain)
+        channels_all = request.env['slide.channel'].search(domain) & channels
         if not request.env.user._is_public():
             channels_all = channels_all.filtered(
                 lambda channel: channel.user_id.id == request.session.uid)
@@ -86,7 +93,7 @@ class WebsiteSlidesInherit(WebsiteSlides):
         })
 
         return request.render('website_slides.courses_home', values)
-    
+
     @route(['/slides/all', '/slides/all/tag/<string:slug_tags>'], type='http', auth="public", website=True, sitemap=True)
     def slides_channel_all(self, slide_type=None, slug_tags=None, my=False, **post):
         """ Home page displaying a list of courses displayed according to some
@@ -112,8 +119,13 @@ class WebsiteSlidesInherit(WebsiteSlides):
             # request and so clearly it's not SEO bot.
             tag_list = slug_tags.split(',')
             if len(tag_list) > 1 and not post.get('search'):
-                url = QueryURL('/slides/all', ['tag'], tag=tag_list[0], my=my, slide_type=slide_type)()
+                url = QueryURL(
+                    '/slides/all', ['tag'], tag=tag_list[0], my=my, slide_type=slide_type)()
                 return request.redirect(url, code=302)
+
+        # if not request.env.user.sudo()._is_public() and not my:
+        #     url = QueryURL('/slides/all', ['tag'], my=1, slide_type=slide_type)()
+        #     return request.redirect(url, code=302)
 
         options = {
             'displayDescription': True,
@@ -129,7 +141,7 @@ class WebsiteSlidesInherit(WebsiteSlides):
         search = post.get('search')
         order = self._channel_order_by_criterion.get(post.get('sorting'))
         _, details, fuzzy_search_term = request.website._search_with_fuzzy("slide_channels_only", search,
-            limit=1000, order=order, options=options)
+                                                                           limit=1000, order=order, options=options)
         channels = details[0].get('results', request.env['slide.channel'])
 
         tag_groups = request.env['slide.channel.tag.group'].search(
@@ -142,8 +154,31 @@ class WebsiteSlidesInherit(WebsiteSlides):
             search_tags = request.env['slide.channel.tag']
 
         values = self._prepare_user_values(**post)
+
+        user_id = values["user"]
+        domain = [("partner_id", "=", user_id.partner_id.id)]
+        if search or fuzzy_search_term:
+            domain = expression.AND([
+                domain,
+                [("channel_id.name", "ilike", search or fuzzy_search_term)],
+            ])
+
+        for search_tag in search_tags:
+            domain = expression.AND([
+                domain,
+                [("channel_id.tag_ids", "in", [search_tag.id])]
+            ])
+
+        if my:
+            domain = expression.AND([
+                domain,
+                [("channel_id.user_id", "=", user_id.id)]
+            ])
+        channels = request.env["slide.channel.partner"].sudo().search(
+            domain).mapped("channel_id")
+
         values.update({
-            'channels': channels.filtered(lambda channel: channel.user_id.id == request.session.uid),
+            'channels': channels,
             'tag_groups': tag_groups,
             'search_term': fuzzy_search_term or search,
             'original_search': fuzzy_search_term and search,
