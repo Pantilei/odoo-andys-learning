@@ -34,6 +34,7 @@
         'views/portal_templates.xml',
         'views/website_slides_templates_course.xml',
         'views/website_slides_templates_lesson.xml',
+        'views/website_slides_templates_lesson_fullscreen.xml',
 
         'views/menu_items.xml',
     ],
@@ -47,6 +48,7 @@
         'web.assets_backend': [],
         'web.assets_frontend': [
             'restaurant_learning/static/src/js/slides_course_slides.js',
+            'restaurant_learning/static/src/js/slides_course_quiz.js',
         ],
         'web.assets_tests': [],
         'web.qunit_suite_tests': [],

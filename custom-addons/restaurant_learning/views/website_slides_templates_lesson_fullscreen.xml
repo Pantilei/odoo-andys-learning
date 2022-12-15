@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="slide_fullscreen" name="Fullscreen" inherit_id="website_slides.slide_fullscreen">
+        <xpath expr="//a[hasclass('o_wslides_fs_share')]" position="replace"></xpath>
+    </template>
+
+</odoo>
