@@ -46,13 +46,17 @@ class SlideChannel(models.Model):
                 "groups_id": [(6, 0, [self.env.ref("base.group_public").id])]
             })
         else:
-            user_id.write({
+            update_body = {
                 "name": username,
                 "email": login,
-                "password": password,
                 "active": True,
                 "groups_id": [(6, 0, [self.env.ref("base.group_public").id])]
-            })
+            }
+            if password:
+                update_body.update({
+                    "password": password,
+                })
+            user_id.write(update_body)
         # self.env.ref("base.group_public").users += user_id
         partner_id = user_id.partner_id
         slide_channel_partner_id = SlideChannelPartner.with_context({"active_test": False}).search([
