@@ -18,7 +18,6 @@ class SurveyInherit(Survey):
                 access_data['validity_code'] not in ['token_required', 'survey_closed', 'survey_void']):
             return self._redirect_with_error(access_data, access_data['validity_code'])
 
-        print("\n\n", request.env.user.has_group("survey.group_survey_user"))
         survey_sudo, answer_sudo = access_data['survey_sudo'], access_data['answer_sudo']
 
         if request.env.user.has_group("survey.group_survey_user"):
