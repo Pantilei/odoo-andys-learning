@@ -54,6 +54,9 @@
         'web.qunit_suite_tests': [],
         'web.report_assets_common': [],
         'web.assets_qweb': [],
+        'web._assets_primary_variables': [
+            ("prepend", "restaurant_learning/static/src/scss/primary_variables.scss"),
+        ],
     },
     'license': 'LGPL-3',
 }

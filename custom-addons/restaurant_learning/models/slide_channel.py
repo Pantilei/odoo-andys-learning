@@ -1,4 +1,4 @@
-from odoo import api, models, fields, _
+from odoo import _, api, fields, models
 
 
 class SlideChannel(models.Model):
@@ -85,3 +85,41 @@ class SlideChannel(models.Model):
             },
             "target": "current",
         }
+
+    @api.model
+    def get_user_scores_of_survey_of_slide_channel(self, slide_channel_id):
+        channel_id = self.env["slide.channel"].search([("id", "=", slide_channel_id)])
+        if not channel_id:
+            return []
+
+        if cert_slide_ids := channel_id.slide_ids.filtered(lambda r: r.slide_type == "certification"):
+            certification_id = cert_slide_ids[-1].survey_id
+            user_input_ids = self.env["survey.user_input"].search([
+                ["survey_id", "=", certification_id.id],
+                ["state", "=", "done"],
+                ["test_entry", "=", False],
+            ], sort="create_date asc")
+
+            return [{
+                "slide_channel_id": self.id,
+                "partner_id": user_input_id.partner_id.id,
+                "scoring_percentage": user_input_id.scoring_percentage
+            } for user_input_id in user_input_ids]
+
+        return []
+    
+    @api.model
+    def get_partner_scores_by_slide_channel(self, partner_id):
+        
+        user_input_ids = self.env["survey.user_input"].search([
+            ["partner_id", "=", partner_id],
+            ["state", "=", "done"],
+            ["test_entry", "=", False],
+        ], sort="create_date asc")
+
+        return [{
+            "slide_channel_id": self.id,
+            "partner_id": user_input_id.partner_id.id,
+            "scoring_percentage": user_input_id.scoring_percentage
+        } for user_input_id in user_input_ids]
+
