@@ -11,40 +11,88 @@
             <t t-set="channels_popular" t-value="False" />
         </xpath>
 
-        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace"></xpath>
+        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace">
+            <style>
+                main {
+                background-image: url("/restaurant_learning/static/src/img/bg.jpg");
+                background-color: #cccccc;
+                background-size: cover;
+                }
+            </style>
+        </xpath>
+
+        <xpath expr="//section[hasclass('s_banner')]" position="attributes">
+            <attribute name="style">
+                background-image: url(&quot;/restaurant_learning/static/src/img/bg.jpg&quot;);
+                background-size: cover;
+                background-position: 55% 65%;
+            </attribute>
+        </xpath>
 
     </template>
 
     <template id="courses_all" name="Courses All" inherit_id="website_slides.courses_all">
-        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace"></xpath>
+        <xpath expr="//div[hasclass('o_wprofile_email_validation_container')]" position="replace">
+            <style>
+                main {
+                background-image: url("/restaurant_learning/static/src/img/bg.jpg");
+                background-color: #cccccc;
+                background-size: cover;
+                }
+            </style>
+        </xpath>
+
+        <xpath expr="//section[hasclass('s_banner')]" position="attributes">
+            <attribute name="style"></attribute>
+            <attribute name="class">
+                s_banner text-black
+            </attribute>
+        </xpath>
+
     </template>
 
 
     <template id="course_card" name="Course Card" inherit_id="website_slides.course_card">
         <xpath expr="//a" position="replace">
-            <t t-set="first_content" t-value="channel.slide_ids.filtered(lambda r: not r.is_category)" />
-            <a t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}" t-title="channel.name">
-                <t t-if="channel.partner_has_new_content" t-call="website_slides.course_card_information" />
-                <div t-if="channel.image_1024" class="card-img-top" t-attf-style="padding-top: 50%; background-image: url(#{course_image}); background-size: cover; background-position:center" />
-                <div t-else="" class="o_wslides_gradient card-img-top position-relative" style="padding-top: 50%; opacity: 0.8">
-                    <i class="fa fa-graduation-cap fa-2x mr-3 mb-3 position-absolute text-white-75" style="right:0; bottom: 0" />
+            <t t-set="first_content"
+                t-value="channel.slide_ids.filtered(lambda r: not r.is_category)" />
+            <a
+                t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}"
+                t-title="channel.name">
+                <t t-if="channel.partner_has_new_content"
+                    t-call="website_slides.course_card_information" />
+                <div t-if="channel.image_1024" class="card-img-top"
+                    t-attf-style="padding-top: 50%; background-image: url(#{course_image}); background-size: cover; background-position:center" />
+                <div t-else="" class="o_wslides_gradient card-img-top position-relative"
+                    style="padding-top: 50%; opacity: 0.8">
+                    <i class="fa fa-graduation-cap fa-2x mr-3 mb-3 position-absolute text-white-75"
+                        style="right:0; bottom: 0" />
                 </div>
             </a>
         </xpath>
 
         <xpath expr="//div[hasclass('card-body')]" position="replace">
             <div class="card-body p-3">
-                <a class="card-title h5 mb-2 o_wslides_desc_truncate_2" t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}" t-esc="channel.name" />
+                <a class="card-title h5 mb-2 o_wslides_desc_truncate_2"
+                    t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}"
+                    t-esc="channel.name" />
                 <span t-if="not channel.is_published" class="badge badge-danger p-1">Unpublished</span>
                 <div class="card-text mt-1">
-                    <div class="font-weight-light o_wslides_desc_truncate_3" t-field="channel.description_short" />
+                    <div class="font-weight-light o_wslides_desc_truncate_3"
+                        t-field="channel.description_short" />
                     <div t-if="channel_frontend_tags" class="mt-2 pt-1 o_wslides_desc_truncate_2">
                         <t t-foreach="channel_frontend_tags" t-as="tag">
                             <t t-if="search_tags">
-                                <a t-att-href="slide_query_url(tag=slugify_tags(search_tags.ids, toggle_tag_id=tag.id), my=search_my, search=search_term, slide_type=search_slide_type)" t-attf-class="badge post_link #{'badge-primary' if tag in search_tags else 'o_wslides_channel_tag o_tag_color_0'}" t-att-rel="search_tags and 'nofollow'" t-esc="tag.name" />
+                                <a
+                                    t-att-href="slide_query_url(tag=slugify_tags(search_tags.ids, toggle_tag_id=tag.id), my=search_my, search=search_term, slide_type=search_slide_type)"
+                                    t-attf-class="badge post_link #{'badge-primary' if tag in search_tags else 'o_wslides_channel_tag o_tag_color_0'}"
+                                    t-att-rel="search_tags and 'nofollow'" t-esc="tag.name" />
                             </t>
                             <t t-else="">
-                                <a t-att-href="slide_query_url(tag=slugify_tags(search_tags.ids, toggle_tag_id=tag.id), my=search_my, search=search_term, slide_type=search_slide_type)" t-attf-class="badge post_link o_wslides_channel_tag #{'o_tag_color_'+str(tag.color)}" t-att-rel="search_tags and 'nofollow'" t-esc="tag.name" />
+                                <a
+                                    t-att-href="slide_query_url(tag=slugify_tags(search_tags.ids, toggle_tag_id=tag.id), my=search_my, search=search_term, slide_type=search_slide_type)"
+                                    t-attf-class="badge post_link o_wslides_channel_tag #{'o_tag_color_'+str(tag.color)}"
+                                    t-att-rel="search_tags and 'nofollow'" t-esc="tag.name" />
                             </t>
                         </t>
                     </div>

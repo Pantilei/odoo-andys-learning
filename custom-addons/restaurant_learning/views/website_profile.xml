@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="user_profile_header" name="Courses Homepage" inherit_id="website_profile.user_profile_header">
+    <template id="user_profile_header" name="Courses Header"
+        inherit_id="website_profile.user_profile_header">
         <xpath expr="//h1[hasclass('o_card_people_name')]" position="replace">
+            <style>
+                main {
+                background-image: url("/restaurant_learning/static/src/img/bg.jpg");
+                background-color: #cccccc;
+                background-size: cover;
+                }
+            </style>
             <h1 class="o_card_people_name">
                 <span t-field="user.name" />
             </h1>
         </xpath>
         <xpath expr="//a[hasclass('d-md-inline-block')]" position="replace">
-            <a class="btn btn-primary d-none d-md-inline-block" t-if="request.env.user._is_admin()" t-attf-href="/profile/edit?url_param=#{edit_button_url_param}&amp;user_id=#{user.id}">
-                <i class="fa fa-pencil mr-2" />
-                Редактировать Профиль
-            </a>
+            <!-- <a class="btn btn-primary d-none d-md-inline-block"
+            t-if="request.env.user._is_admin()"
+            t-attf-href="/profile/edit?url_param=#{edit_button_url_param}&amp;user_id=#{user.id}">
+            <i class="fa fa-pencil mr-2" /> Редактировать Профиль </a> -->
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_wprofile_header')]" position="attributes">
+            <attribute name="class">text-black</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_wprofile_pict')]" position="attributes">
+            <attribute name="t-attf-style">
+                background-image: url(#{website.image_url(user, 'avatar_1024')});
+                border: none;
+            </attribute>
         </xpath>
     </template>
 
-    <template id="user_profile_content" name="Courses Homepage" inherit_id="website_profile.user_profile_content">
+    <template id="user_profile_content_inherit" name="Courses Homepage"
+        inherit_id="website_profile.user_profile_content">
 
         <xpath expr="//div[hasclass('container')]" position="replace">
             <div class="container">
@@ -23,16 +43,18 @@
 
                     <!-- ========== SIDEBAR ========== -->
                     <div class="col-12 col-md-4 col-lg-3 mt-3 mt-md-0">
-                        <div class="o_wprofile_sidebar bg-white px-3 py-2 py-md-3 mb-3 mb-md-5">
+                        <div class="o_wprofile_sidebar bg-white px-3 py-2 py-md-3 mb-3 mb-md-5"
+                            style="border: 0px solid balck;">
                             <div class="collapse d-md-block" id="o_wprofile_sidebar_collapse">
                                 <table class="table table-sm w-100" id="o_wprofile_sidebar_table">
                                     <tbody>
                                         <tr>
                                             <th>
-                                                <small class="font-weight-bold">Joined</small>
+                                                <small class="font-weight-bold">Присоединился</small>
                                             </th>
                                             <td>
-                                                <span t-field="user.create_date" t-options='{"format": "d MMM Y"}' />
+                                                <span t-field="user.create_date"
+                                                    t-options='{"format": "d MMM Y"}' />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -43,36 +65,35 @@
 
                     <!-- ========== PROFILE CONTENT ========== -->
                     <div class="col-12 col-md-8 col-lg-9">
-                        <ul class="nav nav-tabs o_wprofile_nav_tabs flex-nowrap" role="tablist" id="profile_extra_info_tablist">
-                            <li class="nav-item">
-                                <a role="tab" aria-controls="about" href="#profile_tab_content_about" class="nav-link active" data-toggle="tab">About</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content py-4 o_wprofile_tabs_content mb-4" id="profile_extra_info_tabcontent">
-                            <div role="tabpanel" class="tab-pane active" id="profile_tab_content_about">
+                        <div class="tab-content py-4 o_wprofile_tabs_content mb-4"
+                            id="profile_extra_info_tabcontent">
+                            <div role="tabpanel" class="tab-pane active"
+                                id="profile_tab_content_about">
                                 <t t-if="channel">
                                     <div class="mb32">
-                                        <h5 class="border-bottom pb-1">Completed Courses</h5>
-                                        <t t-if="courses_completed" t-call="website_slides.display_course">
+                                        <h5 class="border-bottom pb-1">Незавершенные курсы</h5>
+                                        <t t-if="courses_ongoing"
+                                            t-call="website_slides.display_course">
+                                            <t t-set="courses" t-value="courses_ongoing"></t>
+                                        </t>
+                                        <p t-else="" class="text-muted">Нет незавершенных курсов!</p>
+                                    </div>
+                                    <div class="mb32">
+                                        <h5 class="border-bottom pb-1">Завершенные Курсы</h5>
+                                        <t t-if="courses_completed"
+                                            t-call="website_slides.display_course">
                                             <t t-set="courses" t-value="courses_completed"></t>
                                         </t>
-                                        <div t-else="" class="text-muted d-inline-block">No completed courses yet!</div>
+                                        <div t-else="" class="text-muted d-inline-block">
+                                            Нет Завершенных курсов!
+                                        </div>
                                         <div class="text-right d-inline-block pull-right">
                                             <a href="/slides/all" class="btn btn-link btn-sm">
-                                                <i class="fa fa-arrow-right mr-1" />
-                                                All Courses
-                                            </a>
+                                                <i class="fa fa-arrow-right mr-1" /> Все Курсы </a>
                                         </div>
                                     </div>
                                     <div class="mb32">
-                                        <h5 class="border-bottom pb-1">Followed Courses</h5>
-                                        <t t-if="courses_ongoing" t-call="website_slides.display_course">
-                                            <t t-set="courses" t-value="courses_ongoing"></t>
-                                        </t>
-                                        <p t-else="" class="text-muted">No followed courses yet!</p>
-                                    </div>
-                                    <div class="mb32">
-                                        <h5 class="border-bottom pb-1">Certifications</h5>
+                                        <h5 class="border-bottom pb-1">Сертификации</h5>
                                         <t t-call="website_slides_survey.display_certificate" />
                                     </div>
                                 </t>
@@ -85,40 +106,104 @@
 
     </template>
 
+    <template id="display_certificate" inherit_id="website_slides_survey.display_certificate">
+        <xpath expr="//t[@t-if='certificates']" position="replace">
+            <t t-if="certificates">
+                <div class="row">
+                    <div class="col-12 col-lg-6" t-foreach="certificates" t-as="certificate">
+                        <div class="card mb-2">
+                            <div class="card-body o_wprofile_slides_course_card_body p-0 d-flex"
+                                t-attf-onclick="location.href='/slides/#{slug(certificate.slide_id.channel_id)}';">
+                                <div class="pl-5 pr-4 rounded-left"
+                                    t-attf-style="background-image: url(#{website.image_url(certificate.slide_id, 'image_128')}); background-position: center" />
+                                <div class="p-2 w-100">
+                                    <h5 class="mt-0 mb-1" t-esc="certificate.survey_id.title" />
+                                    <div t-if="user.id == uid">
+                                        <small class="font-weight-bold">Оценка: <span
+                                                t-esc="certificate.scoring_percentage" /> %</small>
+                                        <div class="float-right">
+                                            <a role="button" class="float-right"
+                                                t-att-href="'/survey/%s/get_certification' % certificate.survey_id.id">
+                                                <i class="fa fa-download"
+                                                    aria-label="Download certification"
+                                                    title="Download Certification" />
+                                            </a>
+                                            <a role="button" class="mr-2" href="#"
+                                                t-attf-onclick="event.stopPropagation(); $('#slideChannelShareModal_#{certificate.slide_id.channel_id.id}').modal('show');">
+                                                <i class="fa fa-share-alt" aria-label="Share"
+                                                    title="Share" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <t t-call="website_slides.slide_share_modal">
+                            <t t-set="record" t-value="certificate.slide_id.channel_id" />
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+
+        <xpath expr="t[@t-else]" position="replace">
+            <t t-else="">
+                <div class="text-muted d-inline-block">Нет Сертификатов!</div>
+            </t>
+        </xpath>
+    </template>
+
     <template id="display_course" name="template_name" inherit_id="website_slides.display_course">
         <xpath expr="//div[hasclass('card')]" position="replace">
             <div class="card mb-2">
-                <t t-set="first_content" t-value="course.channel_id.slide_ids.filtered(lambda r: not r.is_category)" />
-                <t t-set="first_slide_url" t-value="slug(first_content[0]) if first_content else slug(course.channel_id)" />
+                <t t-set="first_content"
+                    t-value="course.channel_id.slide_ids.filtered(lambda r: not r.is_category)" />
+                <t t-set="first_slide_url"
+                    t-value="slug(first_content[0]) if first_content else slug(course.channel_id)" />
                 <div class="card-body o_wprofile_slides_course_card_body p-0 d-flex"
                     t-attf-onclick="location.href='/slides/slide/#{first_slide_url}';">
 
-                    <div t-if="course.channel_id.image_1024" class="pl-5 pr-4 rounded-left" t-attf-style="background-image: url(#{website.image_url(course.channel_id, 'image_1024')}); background-size: cover; background-position: center" />
-                    <div t-else="" class="o_wslides_gradient pl-5 pr-4 rounded-left position-relative" style="opacity: 0.8">
-                        <i class="fa fa-graduation-cap fa-fw mr-2 mt-3 position-absolute text-white-75" style="right:0; top: 0" />
+                    <div t-if="course.channel_id.image_1024" class="pl-5 pr-4 rounded-left"
+                        t-attf-style="background-image: url(#{website.image_url(course.channel_id, 'image_1024')}); background-size: cover; background-position: center" />
+                    <div t-else=""
+                        class="o_wslides_gradient pl-5 pr-4 rounded-left position-relative"
+                        style="opacity: 0.8">
+                        <i
+                            class="fa fa-graduation-cap fa-fw mr-2 mt-3 position-absolute text-white-75"
+                            style="right:0; top: 0" />
                     </div>
 
                     <div class="p-2 w-100">
                         <h5 class="mt-0 mb-1" t-field="course.channel_id.name" />
 
                         <div class="overflow-hidden mb-1" style="height:24px">
-                            <t t-foreach="course.channel_id.tag_ids.filtered(lambda tag: tag.color)" t-as="tag">
-                                <a t-att-href="'/slides/all/tag/%s' % slug(tag)" t-attf-class="badge o_wslides_channel_tag post_link #{'o_tag_color_'+str(tag.color)}" t-esc="tag.name" />
+                            <t t-foreach="course.channel_id.tag_ids.filtered(lambda tag: tag.color)"
+                                t-as="tag">
+                                <a t-att-href="'/slides/all/tag/%s' % slug(tag)"
+                                    t-attf-class="badge o_wslides_channel_tag post_link #{'o_tag_color_'+str(tag.color)}"
+                                    t-esc="tag.name" />
                             </t>
                         </div>
 
                         <div class="d-flex align-items-center">
                             <div class="progress flex-grow-1" style="height:0.5em">
-                                <div class="progress-bar bg-primary" t-att-style="'width: '+ str(course.completion)+'%'" />
+                                <div class="progress-bar bg-primary"
+                                    t-att-style="'width: '+ str(course.completion)+'%'" />
                             </div>
                             <small class="font-weight-bold pl-2">
-                                <span t-esc="course.completion" />
-                                %
-                            </small>
+                                <span t-esc="course.completion" /> % </small>
                         </div>
                     </div>
                 </div>
             </div>
+        </xpath>
+    </template>
+
+
+    <template id="user_profile_sub_nav" name="User profile subnav"
+        inherit_id="website_profile.user_profile_sub_nav">
+        <xpath expr="//div[hasclass('o_wprofile_all_users_nav')]" position="attributes">
+            <attribute name="class">o_wprofile_all_users_nav d-none</attribute>
         </xpath>
     </template>
 

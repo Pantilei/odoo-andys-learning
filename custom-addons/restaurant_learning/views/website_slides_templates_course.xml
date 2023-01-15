@@ -12,4 +12,16 @@
         </xpath>
     </template>
 
+    <template name="Slide Detailed View" id="slide_main" inherit_id="website_slides.slide_main">
+        <xpath expr="//div[hasclass('o_wslides_lesson_header')]" position="inside">
+            <style>
+                main {
+                    background-image: url("/restaurant_learning/static/src/img/bg.jpg");
+                    background-color: #cccccc;
+                    background-size: cover;
+                }
+            </style>
+        </xpath>
+    </template>
+
 </odoo>
