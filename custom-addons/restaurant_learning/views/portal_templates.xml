@@ -3,10 +3,10 @@
 
     <template id="user_sign_in" name="User Sign In" inherit_id="portal.user_sign_in">
         <xpath expr="//li" position="replace">
-            <li t-if="not request.session.uid" groups="base.group_public" t-attf-class="#{_item_class} o_no_autohide_item">
-                <a t-attf-href="/web/login" t-attf-class="#{_link_class}">
-                    Sign in
-                    <span t-if="request.session.profile_session" class="text-danger fa fa-circle" />
+            <li t-if="not request.session.uid" groups="base.group_public"
+                t-attf-class="#{_item_class} o_no_autohide_item">
+                <a t-attf-href="/web/login" t-attf-class="#{_link_class}"> Войти <span
+                        t-if="request.session.profile_session" class="text-danger fa fa-circle" />
                 </a>
             </li>
         </xpath>
