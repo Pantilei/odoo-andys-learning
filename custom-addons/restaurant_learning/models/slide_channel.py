@@ -31,7 +31,7 @@ class SlideChannel(models.Model):
             })
 
     @api.model
-    def create_assign_user_to_course(self, username, login, password, slide_channel_id):
+    def create_assign_user_to_course(self, username, login, password, slide_channel_id, image_1920):
         Users = self.env["res.users"]
         SlideChannelPartner = self.env['slide.channel.partner']
         user_id = Users.with_context({"active_test": False}).search([
@@ -39,6 +39,7 @@ class SlideChannel(models.Model):
         if not user_id:
             user_id = Users.create({
                 "name": username,
+                "image_1920": image_1920,
                 "email": login,
                 "login": login,
                 "password": password,
