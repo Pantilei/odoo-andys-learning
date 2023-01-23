@@ -8,12 +8,21 @@
         <field name="arch" type="xml">
 
             <xpath expr="//button[@name='action_channel_invite']" position="replace">
-                <button string="Assign the Course" name="assign_course" type="object" class="oe_highlight" />
-                <button string="Publish the Course" name="publish_course" type="object" class="oe_highlight" attrs="{'invisible': [('is_published', '=', True)]}" />
-                <button string="Publish all Contents" name="publish_all_contents" type="object" class="oe_highlight"/>
+                <button string="Assign the Course" name="assign_course" type="object"
+                    class="oe_highlight" />
+                <button string="Publish the Course" name="publish_course" type="object"
+                    class="oe_highlight" attrs="{'invisible': [('is_published', '=', True)]}" />
+                <button string="Publish all Contents" name="publish_all_contents" type="object"
+                    class="oe_highlight" />
             </xpath>
 
-            <xpath expr="//field[@name='slide_ids']/tree/field[@name='is_published']" position="replace">
+            <xpath expr="//field[@name='slide_ids']/tree/field[@name='completion_time']"
+                position="before">
+                <field name="questions_count" string="Questions" />
+            </xpath>
+
+            <xpath expr="//field[@name='slide_ids']/tree/field[@name='is_published']"
+                position="replace">
                 <field name="is_published" string="Published" widget="boolean_toggle" />
             </xpath>
 
@@ -41,9 +50,9 @@
 
 
             <xpath expr="//field[@name='description']" position="replace">
-                <field name="description" colspan="4" 
-                    placeholder="Common tasks for a computer scientist is asking the right questions and answering questions. In this course, you'll study those topics with activities about mathematics, science and logic." 
-                    widget="html" options="{'codeview': true}"/>
+                <field name="description" colspan="4"
+                    placeholder="Common tasks for a computer scientist is asking the right questions and answering questions. In this course, you'll study those topics with activities about mathematics, science and logic."
+                    widget="html" options="{'codeview': true}" />
             </xpath>
 
 
@@ -54,7 +63,7 @@
     <record id="website_slides.slide_channel_action_overview" model="ir.actions.act_window">
         <field name="context">{
             'search_default_user_id': 1
-        }</field>
+            }</field>
         <!-- <field name="domain">[('create_uid', '=', uid)]</field> -->
     </record>
 

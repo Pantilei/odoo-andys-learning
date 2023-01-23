@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 08:12+0000\n"
-"PO-Revision-Date: 2022-12-11 08:12+0000\n"
+"POT-Creation-Date: 2023-01-23 18:44+0000\n"
+"PO-Revision-Date: 2023-01-23 18:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,22 @@ msgstr "0012345 или email@yourcompany.com"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
-msgid ""
-"<i class=\"fa fa-arrow-right mr-1\"/>\n"
-"                                                All Courses"
+msgid "<i class=\"fa fa-arrow-right mr-1\"/> All Courses"
+msgstr "<i class=\"fa fa-arrow-right mr-1\"/> Все Курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "<i class=\"fa fa-arrow-right mr-1\"/> Все Курсы"
 msgstr ""
-"<i class=\"fa fa-arrow-right mr-1\"/>\n"
-"                                                Все Курсы"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
+msgid ""
+"<i class=\"fa fa-download\" aria-label=\"Download certification\" "
+"title=\"Download Certification\"/>"
+msgstr ""
+"<i class=\"fa fa-download\" aria-label=\"Download certification\" "
+"title=\"Загрузить Сертификат\"/>"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
@@ -36,14 +46,12 @@ msgid ""
 "                        About"
 msgstr ""
 "<i class=\"fa fa-home\"/>\n"
-"                        Описание"
+"                        О Содержании"
 
 #. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_header
-msgid ""
-"<i class=\"fa fa-pencil mr-2\"/>\n"
-"                Редактировать Профиль"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
+msgid "<i class=\"fa fa-share-alt\" aria-label=\"Share\" title=\"Share\"/>"
+msgstr "<i class=\"fa fa-share-alt\" aria-label=\"Share\" title=\"Поделиться\"/>"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -51,9 +59,9 @@ msgid "<small class=\"font-weight-bold\">Joined</small>"
 msgstr "<small class=\"font-weight-bold\">Присоединился</small>"
 
 #. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
-msgid "About"
-msgstr "О Вас"
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "<small class=\"font-weight-bold\">Присоединился</small>"
+msgstr ""
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_res_groups
@@ -91,7 +99,7 @@ msgid ""
 msgstr ""
 "Общие задачи для компьютерного ученогинженера - задавать правильные вопросы и"
 "отвечать на них. В этом курсе вы будете изучать эти темы вместе с "
-"занятиями по математике, естественным наукам и логике".
+"занятиями по математике, естественным наукам и логике."
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -134,7 +142,7 @@ msgid "Followed Courses"
 msgstr "Отслеживаемые Курсы"
 
 #. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.webl_ogin_inherit
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.web_login_inherit
 msgid "ID / Email"
 msgstr ""
 
@@ -180,6 +188,11 @@ msgid "Participant"
 msgstr "Участник"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.web_login_inherit
+msgid "Password"
+msgstr "Пароль"
+
+#. module: restaurant_learning
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__enroll__public
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__visibility__public
 msgid "Public"
@@ -201,6 +214,11 @@ msgid "Published"
 msgstr "Опубликовано"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
+msgid "Questions"
+msgstr "Викторины"
+
+#. module: restaurant_learning
 #: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel__scoring_type
 #: model:ir.model.fields,field_description:restaurant_learning.field_survey_survey__scoring_type
 msgid "Scoring"
@@ -217,11 +235,6 @@ msgstr "Оценки с ответами в конце"
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__survey_survey__scoring_type__scoring_without_answers
 msgid "Scoring without answers at the end"
 msgstr "Оценки без ответов в конце"
-
-#. module: restaurant_learning
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_sign_in
-msgid "Sign in"
-msgstr "Войти"
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_slide
