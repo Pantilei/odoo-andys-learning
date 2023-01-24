@@ -4,6 +4,13 @@ from odoo import _, api, fields, models
 class SlideChannel(models.Model):
     _inherit = "slide.channel"
 
+    slide_ids = fields.One2many(
+        comodel_name='slide.slide', 
+        inverse_name='channel_id', 
+        string="Slides and categories",
+        copy=True
+    )
+
     enroll = fields.Selection([
         ('public', 'Public'), ('invite', 'On Invitation')],
         default='invite', string='Enroll Policy', required=True,
