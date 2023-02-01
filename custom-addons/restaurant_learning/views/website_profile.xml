@@ -161,7 +161,7 @@
                 <t t-set="first_slide_url"
                     t-value="slug(first_content[0]) if first_content else slug(course.channel_id)" />
                 <div class="card-body o_wprofile_slides_course_card_body p-0 d-flex"
-                    t-attf-onclick="location.href='/slides/slide/#{first_slide_url}';">
+                    t-attf-onclick="location.href='/slides/slide/#{first_slide_url}?fullscreen=1';">
 
                     <div t-if="course.channel_id.image_1024" class="pl-5 pr-4 rounded-left"
                         t-attf-style="background-image: url(#{website.image_url(course.channel_id, 'image_1024')}); background-size: cover; background-position: center" />

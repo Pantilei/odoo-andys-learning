@@ -57,7 +57,7 @@
             <t t-set="first_content"
                 t-value="channel.slide_ids.filtered(lambda r: not r.is_category)" />
             <a
-                t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}"
+                t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}?fullscreen=1"
                 t-title="channel.name">
                 <t t-if="channel.partner_has_new_content"
                     t-call="website_slides.course_card_information" />
@@ -74,7 +74,7 @@
         <xpath expr="//div[hasclass('card-body')]" position="replace">
             <div class="card-body p-3">
                 <a class="card-title h5 mb-2 o_wslides_desc_truncate_2"
-                    t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}"
+                    t-attf-href="/slides/slide/#{slug(first_content[0] if len(first_content) else channel)}?fullscreen=1"
                     t-esc="channel.name" />
                 <span t-if="not channel.is_published" class="badge badge-danger p-1">Unpublished</span>
                 <div class="card-text mt-1">
