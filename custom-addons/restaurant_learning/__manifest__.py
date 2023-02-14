@@ -30,6 +30,7 @@
         'views/slide_channel_partner.xml',
         'views/survey_survey.xml',
         'views/slide_slide.xml',
+        'views/slide_slide_partner.xml',
         'views/contacts.xml',
         'views/portal_templates.xml',
         'views/website_slides_templates_course.xml',

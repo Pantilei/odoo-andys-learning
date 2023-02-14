@@ -8,4 +8,10 @@
         groups="base.group_no_one"
         sequence="10" />
 
+    <menuitem id="slide_slide_partner_menu"
+        name="Member Courses"
+        parent="website_slides.website_slides_menu_root"
+        action="slide_slide_partner_action"
+        sequence="5" />
+
 </odoo>
