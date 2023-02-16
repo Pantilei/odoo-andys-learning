@@ -50,6 +50,7 @@
         'web.assets_frontend': [
             'restaurant_learning/static/src/js/slides_course_slides.js',
             'restaurant_learning/static/src/js/slides_course_quiz.js',
+            'restaurant_learning/static/src/js/slides_course_fullscreen_player.js',
         ],
         'web.assets_tests': [],
         'web.qunit_suite_tests': [],
