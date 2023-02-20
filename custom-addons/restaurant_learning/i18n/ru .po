@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-23 18:44+0000\n"
-"PO-Revision-Date: 2023-01-23 18:44+0000\n"
+"POT-Creation-Date: 2023-02-20 21:10+0000\n"
+"PO-Revision-Date: 2023-02-20 21:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #. module: restaurant_learning
 #: code:addons/restaurant_learning/models/slide_channel.py:0
-#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form_assign
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
 #, python-format
 msgid "Assign the Course"
@@ -91,15 +91,20 @@ msgid "Certifications"
 msgstr "Сертификация"
 
 #. module: restaurant_learning
+#: model:ir.model,name:restaurant_learning.model_slide_channel_partner
+msgid "Channel / Partners (Members)"
+msgstr "Курс / Участники"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
 msgid ""
 "Common tasks for a computer scientist is asking the right questions and "
 "answering questions. In this course, you'll study those topics with "
 "activities about mathematics, science and logic."
 msgstr ""
-"Общие задачи для компьютерного ученогинженера - задавать правильные вопросы и"
-"отвечать на них. В этом курсе вы будете изучать эти темы вместе с "
-"занятиями по математике, естественным наукам и логике."
+"Общие задачи для компьютерного инженера - задавать правильные вопросы "
+"и отвечать на них. В этом курсе вы будете изучать эти темы вместе с занятиями"
+" по математике, естественным наукам и логике."
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -119,8 +124,20 @@ msgid "Contacts"
 msgstr "Контакты"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
+msgid "Content"
+msgstr "Содержание"
+
+#. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_channel
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form_assign
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_tree
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
 msgid "Course"
 msgstr "Обучающий курс"
 
@@ -142,6 +159,12 @@ msgid "Followed Courses"
 msgstr "Отслеживаемые Курсы"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_search
+msgid "Group By"
+msgstr "Группировать по"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.web_login_inherit
 msgid "ID / Email"
 msgstr ""
@@ -157,14 +180,46 @@ msgid "Is a Certification"
 msgstr "Является сертификацией"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
+msgid "Make as complete"
+msgstr "Обозначить как пройденные"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
+msgid "Make as incomplete"
+msgstr "Обозначить как не пройденные"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_tree
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_search
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
+msgid "Member"
+msgstr "Участник"
+
+#. module: restaurant_learning
+#: model:ir.actions.act_window,name:restaurant_learning.slide_channel_partner_action
+#: model:ir.actions.act_window,name:restaurant_learning.slide_slide_partner_action
+#: model:ir.ui.menu,name:restaurant_learning.slide_slide_partner_menu
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
+msgid "Member Courses"
+msgstr "Курсы Участника"
+
+#. module: restaurant_learning
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__slide_channel__visibility__members
 msgid "Members Only"
 msgstr "Только для членов"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
-msgid "No completed courses yet!"
-msgstr "Ещё не законченные курсы"
+msgid ""
+"No\n"
+"                                            completed courses yet!"
+msgstr ""
+"Нет\n"
+"                                            пройденных курсов!"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content
@@ -184,6 +239,8 @@ msgstr "По приглашению"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_channel_partner_view_form_assign
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_form
 msgid "Participant"
 msgstr "Участник"
 
@@ -201,7 +258,7 @@ msgstr "Публичный"
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
 msgid "Publish all Contents"
-msgstr "Опубликовать весь Контент"
+msgstr "Опубликовать весь контент"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.view_slide_channel_form_inherit
@@ -237,9 +294,31 @@ msgid "Scoring without answers at the end"
 msgstr "Оценки без ответов в конце"
 
 #. module: restaurant_learning
+#: model:ir.model,name:restaurant_learning.model_slide_slide_partner
+msgid "Slide / Partner decorated m2m"
+msgstr "Слайд / Участник"
+
+#. module: restaurant_learning
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_slide_partner__slide_category_id
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_search
+msgid "Slide Category"
+msgstr "Раздел Содержания"
+
+#. module: restaurant_learning
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_slide_partner__slide_sequence
+msgid "Slide Sequence"
+msgstr "Последовательность Содержания"
+
+#. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_slide
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel_partner__slide_slide_partner_ids
 msgid "Slides"
-msgstr "Слайды"
+msgstr "Содержания"
+
+#. module: restaurant_learning
+#: model:ir.model.fields,field_description:restaurant_learning.field_slide_channel__slide_ids
+msgid "Slides and categories"
+msgstr "Содержания и разделы"
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_survey_survey
@@ -262,5 +341,47 @@ msgid ""
 "e.g. In this video, we'll give you the keys on how Odoo can help you to grow"
 " your business. At the end, we'll propose you a quiz to test your knowledge."
 msgstr ""
-"Например, в этом видео мы дадим вам ключивые пункты к тому, как система может помочь вам расти"
-"в вашем деле. В конце мы предложим вам тест, чтобы проверить ваши знания."
+"Например, в этом видео мы дадим вам ключивые пункты к тому, как система "
+"может помочь вам растив вашем деле. В конце мы предложим вам тест, чтобы "
+"проверить ваши знания."
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_sign_in
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.web_login_inherit
+msgid "Войти"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "Завершенные Курсы"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "Незавершенные курсы"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "Нет Завершенных курсов!"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
+msgid "Нет Сертификатов!"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "Нет незавершенных курсов!"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
+msgid "Оценка:"
+msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
+msgid "Сертификации"
+msgstr ""
