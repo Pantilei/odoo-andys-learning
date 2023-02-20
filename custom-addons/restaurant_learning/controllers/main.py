@@ -44,6 +44,30 @@ class SurveyInherit(Survey):
 
 
 class WebsiteSlidesInherit(WebsiteSlides):
+    def _prepare_user_slides_profile(self, user):
+        domain = [('partner_id', '=', user.partner_id.id)]
+
+        # NEW: Overrided to hide unpublished courses
+        if request.env.user._is_public():
+            domain = expression.AND([
+                domain, 
+                [('channel_id.is_published', "=", True)]
+            ])
+        
+        courses = request.env['slide.channel.partner'].sudo().search(domain)
+        courses_completed = courses.filtered(lambda c: c.completed)
+        courses_ongoing = courses - courses_completed
+        values = {
+            'uid': request.env.user.id,
+            'user': user,
+            'main_object': user,
+            'courses_completed': courses_completed,
+            'courses_ongoing': courses_ongoing,
+            'is_profile_page': True,
+            'badge_category': 'slides',
+        }
+        return values
+    
     def _get_channel_progress(self, channel, include_quiz=False):
         """ Replacement to user_progress. Both may exist in some transient state. """
         slides = request.env['slide.slide'].sudo().search(
@@ -194,7 +218,10 @@ class WebsiteSlidesInherit(WebsiteSlides):
         values = self._prepare_user_values(**post)
 
         user_id = values["user"]
-        domain = [("partner_id", "=", user_id.partner_id.id)]
+        domain = [
+            ("partner_id", "=", user_id.partner_id.id), 
+            ("channel_id.is_published", "=", True)
+        ]
         if search or fuzzy_search_term:
             domain = expression.AND([
                 domain,

@@ -14,4 +14,10 @@
         action="slide_slide_partner_action"
         sequence="5" />
 
+    <!-- <menuitem id="slide_channel_partner_menu"
+        name="Member Courses Channel"
+        parent="website_slides.website_slides_menu_root"
+        action="slide_channel_partner_action"
+        sequence="6" /> -->
+
 </odoo>

@@ -1,5 +1,2 @@
 # -*- coding: utf-8 -*-
-from . import slide_channel
-from . import slide_slide
-from . import res_users
-from . import survey_survey
+from . import res_users, slide_channel, slide_partner, slide_slide, survey_survey
