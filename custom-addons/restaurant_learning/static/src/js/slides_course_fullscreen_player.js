@@ -69,7 +69,6 @@ var VideoPlayer = publicWidget.Widget.extend({
    */
   _onPlayerStateChange: function (event) {
     var self = this;
-
     if (event.data !== YT.PlayerState.ENDED) {
       if (self.slide.completed) {
         return;
@@ -102,7 +101,10 @@ var VideoPlayer = publicWidget.Widget.extend({
       }
       this.player = undefined;
       if (this.slide.hasNext) {
-        this.trigger_up("slide_go_next");
+        this.trigger_up("slide_go_next", {
+          currentCategoryId: this.slide.categoryId,
+          currentSlideID: this.slide.id,
+        });
       }
     }
   },
@@ -140,5 +142,18 @@ Object.assign(Fullscreen.prototype, {
       });
     }
     return Promise.resolve();
+  },
+
+  _onSlideGoToNext: function (ev) {
+    let currentSlideIndex = this.slides.findIndex(
+      (slide) => slide.id == ev.data.currentSlideID
+    );
+    if (this.slides.length > currentSlideIndex + 1) {
+      let nextSlide = this.slides[currentSlideIndex + 1];
+
+      if (nextSlide.categoryId === ev.data.currentCategoryId) {
+        this.sidebar.goNext();
+      }
+    }
   },
 });
