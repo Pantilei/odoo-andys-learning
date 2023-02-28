@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 21:10+0000\n"
-"PO-Revision-Date: 2023-02-20 21:10+0000\n"
+"POT-Creation-Date: 2023-02-28 21:42+0000\n"
+"PO-Revision-Date: 2023-02-28 21:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,15 @@ msgid "<i class=\"fa fa-arrow-right mr-1\"/> Все Курсы"
 msgstr ""
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
+msgid ""
+"<i class=\"fa fa-chevron-left mr-2\"/>\n"
+"                    <span class=\"d-none d-sm-inline-block\">Prev</span>"
+msgstr ""
+"<i class=\"fa fa-chevron-left mr-2\"/>\n"
+"                    <span class=\"d-none d-sm-inline-block\">Пред</span>"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
 msgid ""
 "<i class=\"fa fa-download\" aria-label=\"Download certification\" "
@@ -41,12 +50,8 @@ msgstr ""
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
-msgid ""
-"<i class=\"fa fa-home\"/>\n"
-"                        About"
-msgstr ""
-"<i class=\"fa fa-home\"/>\n"
-"                        О Содержании"
+msgid "<i class=\"fa fa-home\"/> About"
+msgstr "<i class=\"fa fa-home\"/> Содержание"
 
 #. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.display_certificate
@@ -62,6 +67,15 @@ msgstr "<small class=\"font-weight-bold\">Присоединился</small>"
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.user_profile_content_inherit
 msgid "<small class=\"font-weight-bold\">Присоединился</small>"
 msgstr ""
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
+msgid ""
+"<span class=\"d-none d-sm-inline-block\">Next</span>\n"
+"                    <i class=\"fa fa-chevron-right ml-2\"/>"
+msgstr ""
+"<span class=\"d-none d-sm-inline-block\">След</span>\n"
+"                    <i class=\"fa fa-chevron-right ml-2\"/>"
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_res_groups
@@ -180,6 +194,11 @@ msgid "Is a Certification"
 msgstr "Является сертификацией"
 
 #. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
+msgid "Lesson Nav"
+msgstr "Навигация по урокам"
+
+#. module: restaurant_learning
 #: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_slide_partner_view_tree
 msgid "Make as complete"
 msgstr "Обозначить как пройденные"
@@ -292,6 +311,11 @@ msgstr "Оценки с ответами в конце"
 #: model:ir.model.fields.selection,name:restaurant_learning.selection__survey_survey__scoring_type__scoring_without_answers
 msgid "Scoring without answers at the end"
 msgstr "Оценки без ответов в конце"
+
+#. module: restaurant_learning
+#: model_terms:ir.ui.view,arch_db:restaurant_learning.slide_content_detailed
+msgid "Set Done"
+msgstr "Готово"
 
 #. module: restaurant_learning
 #: model:ir.model,name:restaurant_learning.model_slide_slide_partner
