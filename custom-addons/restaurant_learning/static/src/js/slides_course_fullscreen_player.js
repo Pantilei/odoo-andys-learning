@@ -1,7 +1,8 @@
 /** @odoo-module **/
 import publicWidget from "web.public.widget";
 import Fullscreen from "@website_slides/js/slides_course_fullscreen_player";
-import { Quiz } from '@website_slides/js/slides_course_quiz';
+import { Quiz } from "@website_slides/js/slides_course_quiz";
+import { qweb as QWeb, _t } from "web.core";
 
 var VideoPlayer = publicWidget.Widget.extend({
   template: "website.slides.fullscreen.video",
